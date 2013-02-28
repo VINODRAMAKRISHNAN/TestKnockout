@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html> 
+<html> 
+    <head> 
+            
+      <title>jQuery Mobile Web App</title>
+
+            <meta charset="utf-8"/>
+            <meta http-equiv="Content-Type" content="text/html" />
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+             <link href="./css/Content/jquery.mobile-1.3.0.min.css" media="screen" rel="stylesheet" type="text/css"  />
+              <link href="./css/common.css" media="screen" rel="stylesheet" type="text/css"  />
+
+            <script src="./js/Scripts/jquery-1.9.1.js"></script>           
+            <script src="./js/Scripts/jquery.mobile-1.3.0.min.js"></script>
+            <script>
+                function goTo(pageURL, transitionType) {
+                    $.mobile.changePage(pageURL, transitionType);
+                }
+            </script>
+         
+    </head>
+
+
+    <body>    
+            <div data-role=page id=pagemain  data-title="E&P Net1"  data-theme="e" > 
+                <div  data-role=header data-position="inline" data-theme="a" data-mini="true" data-fullscreen="true"> 
+	                <h6>E&P Net</h6>
+                  
+	                   <!-- <div data-type="horizontal" data-role="controlgroup" >  -->
+                          <!-- <a class="ui-btn-left" data-role="label"  data-rel="back" data-corners="true" data-mini="true" data-inline="true" data-icon="back" data-theme="e"  data-iconpos="left">Back </a
+                     <a class="ui-btn-right" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-theme="e" data-iconpos="right"> Home</a> -->
+                    <a class="ui-btn-left"  data-mini="true" data-rel="back"  data-icon="back" data-theme="e"  data-iconpos="notext">Back </a>
+                    
+
+                        <a class="ui-btn-right" href="#pagemain" data-mini="true"  data-icon="home" data-theme="e" data-iconpos="notext"> Home</a>
+                          
+                        <div data-role="navbar" data-iconpos="right" class="ui-navbar" role="navigation" data-mini="true">
+                            <ul>                        
+                                <li><a  data-role="button" class="ui-btn-active"  data-icon="home" data-theme="a" >Assets</a></li>                        
+                                <li><a  data-role="button" onclick="javascript:goTo('#page1','slide');"  data-ajax="false" data-icon="grid"  data-theme="a" >Rigs</a></li>
+                                <li><a data-role="button" href="#popup1" data-overlay-theme="b" data-rel="dialog" data-transition="slidedown" data-inline="true" data-icon="gear" data-iconpos="notext"  data-theme="a" >Setup</a></li>
+                            </ul>
+                        </div>
+                  
+                </div>
+                <div  data-role=content  >
+                    <div>
+                        <div data-role="collapsible" data-theme="b" data-mini="true" data-content-theme="d">
+                           <h3>Location1</h3>
+                           <p>Location1 details</p>
+                        </div>
+                        <div data-role="collapsible" data-theme="b" data-mini="true" data-content-theme="d">
+                           <h3>Location1</h3>
+                           <p>Location1 details</p>
+                        </div>
+                    </div>
+                </div>
+                <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
+                     <div data-role="navbar" data-iconpos="right"  role="navigation" data-mini="true">
+                            <ul style="width:60%;margin: auto; text-align: center">                        
+                                <li><a  data-role="button"   data-icon="check" data-theme="a" >Save</a></li>                        
+                                <li><a  data-role="button"  data-icon="delete"  data-theme="a" >Cancel</a></li>
+                               
+                            </ul>
+                      </div>
+                </div>
+
+            </div>
+         <div data-role="page" id="page1" data-theme="e">
+            <div data-role="header" data-theme="b">
+                <h6>xxxx</h6>
+            </div>
+            <div data-role="content" data-theme="b">
+       
+                <div data-role="fieldcontainer">
+                    <label>hello world</label>
+                </div>
+            </div>
+            <div  data-role=footer data-position="fixed"    data-theme="a">
+                     <div data-role="navbar" data-iconpos="right" class="ui-navbar"  role="navigation" data-mini="true">
+                            <ul style="width:60%;margin: auto; text-align: center">                        
+                                <li><a  data-role="button"   data-icon="vinod1" data-theme="a" >Save1</a></li>                        
+                                <li><a  data-role="button"  data-icon="vinod2"  data-theme="a" >Cancel1</a></li>
+                               
+                            </ul>
+                      </div>
+                </div>
+        </div>
+
+        <div data-role="dialog" id="popup1" data-overlay-theme="e">
+            <div data-role="header" data-theme="b">
+                <h6>My dialog heading</h6>
+            </div>
+            <div data-role="content" data-theme="e">
+       
+                <div data-role="fieldcontainer">
+                    <label>hello world</label>
+                </div>
+            </div>
+             <div  data-role=footer data-position="fixed" data-theme="b">
+                <label>My foooter</label>
+                 <a class="ui-btn-center" data-role="button"  data-rel="back" data-corners="true" data-mini="true" data-inline="true" data-icon="back" data-theme="e"  data-iconpos="left">Back </a>
+            </div> 
+        </div>
+
+    </body> 
+</html> 
