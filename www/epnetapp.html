@@ -10,12 +10,21 @@
             <meta name="apple-mobile-web-app-capable" content="yes" />
            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+      
+
              <link href="./css/Content/jquery.mobile-1.3.0.min.css" media="screen" rel="stylesheet" type="text/css"  />
               <link href="./css/common.css" media="screen" rel="stylesheet" type="text/css"  />
-            
 
+            <script src="./js/Scripts/json2.js"></script>      
+            <script src="./js/Scripts/jquery-1.9.1.js"></script>           
+            <script src="./js/Scripts/jquery.mobile-1.3.0.min.js"></script>
+       
+            <script src="./js/Scripts/knockout-2.2.1.js"></script>   
+            <script src="./js/Scripts/knockout.validation.js"></script>  
+            <script src="./js/Scripts/knockout.mapping-latest.js"></script>  
+            <script src="./js/Scripts/ko.editables.js"></script>
            
-         
+        
     </head>
 
 
@@ -41,19 +50,33 @@
                         </div>
                   
                 </div>
-                <div  data-role=content  >
-                    <div>
-                        <div data-role="collapsible" data-theme="b" data-mini="true" data-content-theme="d">
-                           <h3>Location1</h3>
-                           <p>Location1 details</p>
-                        </div>
-                        <div data-role="collapsible" data-theme="b" data-mini="true" data-content-theme="d">
-                           <h3>Location1</h3>
-                           <p>Location1 details</p>
-                        </div>
-                    </div>
+               
+                 <div  data-role=content  >
+                  
+                     <div data-role="collapsible-set"  data-bind="foreach:items" data-theme="a" data-mini="true" data-content-theme="e" >
+                        <div data-role="collapsible"  data-collapsed="false">
+                                <h6> <span><span style="color:yellow;" data-bind="text:$data.ProjectName"/>&nbsp;<span>Vinod</span> </span> </h6>
+                                <p><span >Project Name:</span><span style="color:blue;" data-bind="text:$data.ProjectName"/></p> 
+                                <p><span>LGG Code:</span><span style="color:blue;" data-bind="text:$data.LGGCode"/></p> 
+                                <p><span >Created By:</span><span style="color:blue;" data-bind="text:$data.CreatedByUser"/></p> 
+                                <p><span >Created Datre:</span><span style="color:blue;" data-bind="text:$data.CreatedByDate"/></p> 
+                                
+                        </div><br />
+                    </div> 
+                    
+                     
+                 </div>
+                
+
+              
+                 <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
+                     <a  data-mini="true" data-rel="back" data-role="button" data-icon="back" data-iconpos="notext"  data-theme="b"></a>                       
+                      <a class="ui-btn-right" data-mini="true"  data-role="button" data-iconpos="notext"  data-icon="refresh"  data-theme="b" ></a>                       
+                              
+                    
                 </div>
-                <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
+               
+               <!-- <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
                      <div data-role="navbar" data-iconpos="right"  role="navigation" data-mini="true">
                             <ul style="width:60%;margin: auto; text-align: center">                        
                                 <li style="list-style-type: none;" ><a  data-role="button"   data-icon="check" data-theme="a" >Save33</a></li>                        
@@ -61,7 +84,7 @@
                                
                             </ul>
                       </div>
-                </div>
+                </div>-->
 
             </div>
          <div data-role="page" id="page1" data-theme="e">
@@ -102,15 +125,7 @@
         </div>
        
          
-         <script src="./js/Scripts/json2.js"></script>      
-            <script src="./js/Scripts/jquery-1.9.1.js"></script>           
-            <script src="./js/Scripts/jquery.mobile-1.3.0.min.js"></script>
-       
-            <script src="./js/Scripts/knockout-2.2.1.js"></script>   
-            <script src="./js/Scripts/knockout.validation.js"></script>  
-            <script src="./js/Scripts/knockout.mapping-latest.js"></script>  
-            <script src="./js/Scripts/ko.editables.js"></script>
-
+         
             <script src="./js/app/app.common.js"></script>   
             <script src="./js/app/app.common.viewmodel.js"></script>  
             <script src="./js/app/app.manageproject.viewmodel.js"></script>  
@@ -122,6 +137,7 @@
                     $.mobile.changePage(pageURL, transitionType);
                 }
             </script>
+      
 
     </body> 
 </html> 

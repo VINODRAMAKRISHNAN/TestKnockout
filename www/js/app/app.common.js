@@ -1,13 +1,12 @@
 ﻿//knockout mapping js url
 //http://nuget.org/packages/Knockout.Mapping
-alert('vinod99');
 //jQuery.noConflict();
 //alert(11);
 //jQuery.support.cors = true;
 //alert(11);//both these codes will support web api cross domain calls from any source
 $.support.cors = true;
 $.mobile.allowCrossDomainPages = true;
-alert('vinod999999');
+
 //jQuery.support.cors = true;
 //modify this for any deployment locations
 
@@ -33,25 +32,25 @@ if (String.prototype.trim != "function") {
 
 var loadCount = 0;
 function StartLoading() {
-    //document.getElementById('FirstloadingPanel').style.display = 'block';
-    //if (loadCount == 0) {
-    //    var window1 = $("#loadwindow").data("kendoWindow");
-    //    window1.open();
-    //    window1.center();
-    //    window1.toFront();
-    //}
+   
+   
+    if (loadCount == 0) {
+        $.mobile.showPageLoadingMsg();
+
+    }
     loadCount = loadCount + 1;
    
 }
 
 function EndLoading() {
-    //document.getElementById('FirstloadingPanel').style.display = 'none';
+    
+    
     loadCount = loadCount - 1;
-    //if (loadCount == 0) {
-    //    var window1 = $("#loadwindow").data("kendoWindow");
-    //    window1.close();
+    if (loadCount == 0) {
+        $.mobile.hidePageLoadingMsg();
+
         
-    //}
+    }
     if (loadCount <= 0) {
         loadCount = 0;
     }

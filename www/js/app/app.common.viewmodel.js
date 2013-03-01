@@ -309,9 +309,8 @@ function AppViewModel(controllername, iscollectioneditable) {
     }
     // register this first, this will load item data on the page load   
     self.loadAllItems = function () {
-        StartLoading();
        
-        alert('vinodo-9');
+      
         //if (self.parentheaderitemgroupname != null && self.parentheaderitemgroupname != "" && self.parentheaderdetails.length <= 0){
         //     self.loadHeaderItems();
         //}
@@ -319,7 +318,7 @@ function AppViewModel(controllername, iscollectioneditable) {
         //if (self.comboboxes.requiredlookupgroups.length > 0 && self.comboboxes.IsLookupLoaded == false) {
         //    self.loadRequiredLookups();
         //}
-        alert(self.webappname + '/api/' + controllername);
+        
         $.ajax({
             crossDomain: true,
             url: self.webappname + '/api/' + controllername,
@@ -329,37 +328,37 @@ function AppViewModel(controllername, iscollectioneditable) {
             beforeSend: function (xhr) {
                 //var token = window.btoa(user + ':' + pass);
                 //xhr.setRequestHeader('Authorization', 'Basic ' + token);
+                StartLoading();
                 xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
             },
 
             success: function (returnitems) {
-                alert('return success');
+              
                 self.items.removeAll();
-               
+              
                 ko.mapping.fromJS(returnitems, self.items);
+                
+
                 //resetTableStyle();
                 var itmid = GetNavigatedItemId();
-               
+              
                 if (self.items().length > 0)
                     self.selectItemById(itmid);
-
-                //if (self.items().length > 0)
-                    //self.setSelectedItemForProcessing(self.items()[0], 0);
-                
-                alert('success end');
-                EndLoading();
+               
+                if (self.items().length > 0)
+                self.setSelectedItemForProcessing(self.items()[0], 0);
+              
+               
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert('error - vinod');
-
-                alert('error - ' + XMLHttpRequest.responseText)
-                alert(textStatus);
-                alert(errorThrown);;
-               // resetTableStyle();
-                EndLoading();
+            error: function (XMLHttpRequest, textStatus, errorThrown) {               
+                alert('error in loading data contact admin - ' + XMLHttpRequest.responseText)
+              
+               
+                
             },
             complete: function () {
-                alert('This is completed');
+                EndLoading();
+
             }
 
 

@@ -5,6 +5,7 @@
 //http://jsfiddle.net/KHFn8/1185/
 //editables: https://github.com/romanych/ko.editables
 
+   
 //Modifiy these function on the basis of requirments
 var Item = function (item) {
     var self = this;
@@ -150,15 +151,17 @@ var FindItemById = function (itemarray, id) {
 //    window.navigate(url + "?id=0&parentid1=" + item.EventTypeId);
 //}
 var GetNavigatedItemId = function () {
-    if (($("#EventTypeId").attr("value") != null) && ($("#EventTypeId").attr("value") != "")) {
-        return $("#EventTypeId").attr("value");
-    }
-    else {
-        return 0;
-    }
+    //if (($("#EventTypeId").attr("value") != null) && ($("#EventTypeId").attr("value") != "")) {
+    //    return $("#EventTypeId").attr("value");
+    //}
+    //else {
+    //    return 0;
+    //}
+    return 1;
 }
 
-alert(333);
+$(document).ready(function () {
+
 var viewModel = new AppViewModel("project");
 
 ko.applyBindings(viewModel);
@@ -166,6 +169,8 @@ ko.applyBindings(viewModel);
 //StartLoading();
 viewModel.loadAllItems(); // load data for first time
 
-alert('done finally');
+
+
+});
 
 //EndtLoading();
