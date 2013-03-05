@@ -42,9 +42,11 @@ function StartLoading() {
    
 }
 
+
+
 function EndLoading() {
     
-    
+   
     loadCount = loadCount - 1;
     if (loadCount == 0) {
         $.mobile.hidePageLoadingMsg();
@@ -144,8 +146,5 @@ var ApplyRowItemColor = function (item) {
 var ApplyRowItemSiblingsColor = function (item) {
     item.css('background-color', '');
 }
-
-
-
 
 

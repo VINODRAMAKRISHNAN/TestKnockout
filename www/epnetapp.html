@@ -15,127 +15,164 @@
              <link href="./css/Content/jquery.mobile-1.3.0.min.css" media="screen" rel="stylesheet" type="text/css"  />
               <link href="./css/common.css" media="screen" rel="stylesheet" type="text/css"  />
 
-            <script src="./js/Scripts/json2.js"></script>      
-            <script src="./js/Scripts/jquery-1.9.1.js"></script>           
-            <script src="./js/Scripts/jquery.mobile-1.3.0.min.js"></script>
-       
-            <script src="./js/Scripts/knockout-2.2.1.js"></script>   
-            <script src="./js/Scripts/knockout.validation.js"></script>  
-            <script src="./js/Scripts/knockout.mapping-latest.js"></script>  
-            <script src="./js/Scripts/ko.editables.js"></script>
+         
            
         
     </head>
 
 
     <body>    
-            <div data-role=page id=pagemain  data-title="E&P Net1"  data-theme="e" > 
-                <div  data-role=header data-position="inline" data-theme="a" data-mini="true" data-fullscreen="true"> 
-	                <h6>E&P Net</h6>
+    <div data-role=page id="searchassets"  data-title="E&P Net1"  data-theme="e" data-bind="with: page1ViewModel" > 
+
+        <div  data-role=header data-position="inline" data-theme="a" data-mini="true" data-fullscreen="true"> 
+	        <h6>E&P Net</h6>
                   
-	                   <!-- <div data-type="horizontal" data-role="controlgroup" >  -->
-                          <!-- <a class="ui-btn-left" data-role="label"  data-rel="back" data-corners="true" data-mini="true" data-inline="true" data-icon="back" data-theme="e"  data-iconpos="left">Back </a
-                     <a class="ui-btn-right" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-theme="e" data-iconpos="right"> Home</a> -->
-                    <a class="ui-btn-left"  data-mini="true" data-rel="back"  data-icon="back" data-theme="e"  data-iconpos="notext">Back </a>
+	     
+            <a class="ui-btn-left"  data-mini="true" data-rel="back"  data-icon="back" data-theme="e"  data-iconpos="notext">Back </a>
                     
 
-                        <a class="ui-btn-right" href="#pagemain" data-mini="true"  data-icon="home" data-theme="e" data-iconpos="notext"> Home</a>
+                <a class="ui-btn-right" href="#pagemain" data-mini="true"  data-icon="home" data-theme="e" data-iconpos="notext"> Home</a>
                           
-                        <div data-role="navbar" data-iconpos="right" class="ui-navbar" role="navigation" data-mini="true">
-                            <ul>                        
-                                <li><a  data-role="button" class="ui-btn-active"  data-icon="home" data-theme="a" >Assets</a></li>                        
-                                <li><a  data-role="button" onclick="javascript:goTo('#page1','slide');"  data-ajax="false" data-icon="grid"  data-theme="a" >Rigs</a></li>
-                                <li><a data-role="button" href="#popup1" data-overlay-theme="b" data-rel="dialog" data-transition="slidedown" data-inline="true" data-icon="gear" data-iconpos="notext"  data-theme="a" >Setup</a></li>
-                            </ul>
-                        </div>
-                  
+                <div data-role="navbar" data-iconpos="right" class="ui-navbar" role="navigation" data-mini="true">
+                    <ul>                        
+                        <li><a  data-role="button" class="ui-btn-active"  data-icon="home" data-theme="a" >Assets</a></li>                        
+                        <li><a  data-role="button" onclick="javascript:goTo('#listassets','slide');"  data-ajax="false" data-icon="grid"  data-theme="a" >Rigs</a></li>
+                        <li><a data-role="button" href="#popup1" data-overlay-theme="b" data-rel="dialog" data-transition="slidedown" data-inline="true" data-icon="gear" data-iconpos="notext"  data-theme="a" >Setup</a></li>
+                    </ul>
                 </div>
-               
-                 <div  data-role=content  >
                   
-                     <div data-role="collapsible-set"  data-bind="foreach:items" data-theme="a" data-mini="true" data-content-theme="e" >
-                        <div data-role="collapsible"  data-collapsed="false">
-                                <h6> <span><span style="color:yellow;" data-bind="text:$data.ProjectName"/>&nbsp;<span>Vinod</span> </span> </h6>
-                                <p><span >Project Name:</span><span style="color:blue;" data-bind="text:$data.ProjectName"/></p> 
-                                <p><span>LGG Code:</span><span style="color:blue;" data-bind="text:$data.LGGCode"/></p> 
-                                <p><span >Created By:</span><span style="color:blue;" data-bind="text:$data.CreatedByUser"/></p> 
-                                <p><span >Created Datre:</span><span style="color:blue;" data-bind="text:$data.CreatedByDate"/></p> 
+        </div>
+               
+        <div  data-role=content  >
+            <div data-role="collapsible-set"  data-bind="foreach:items" data-theme="a" data-mini="true" data-content-theme="e" >
+            <div data-role="collapsible"  data-collapsed="false">
+                    <h6> <span><span style="color:yellow;" data-bind="text:$data.ProjectName"/>&nbsp;<span>Vinod</span> </span> </h6>
+                    <p><span >Project Name:</span><span style="color:blue;" data-bind="text:$data.ProjectName"/></p> 
+                    <p><span>LGG Code:</span><span style="color:blue;" data-bind="text:$data.LGGCode"/></p> 
+                    <p><span >Created By:</span><span style="color:blue;" data-bind="text:$data.CreatedByUser"/></p> 
+                    <p><span >Created Datre:</span><span style="color:blue;" data-bind="text:$data.CreatedByDate"/></p> 
                                 
-                        </div><br />
-                    </div> 
+            </div><br />
+        </div> 
                     
                      
-                 </div>
+        </div>
                 
+        <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
+            <a  data-mini="true" data-rel="back" data-role="button" data-icon="back" data-iconpos="notext"  data-theme="b"></a> &nbsp;
+            <a data-mini="true" data-role="button" onclick="javascript:goTo('#listassets','slide');"   data-ajax="false" data-icon="grid">Listaa</a>
+	        <a data-mini="true"  data-role="button" data-bind="click: $root.page2ViewModel.loadAllItems"   data-icon="map">Map</a>
+	        <a data-mini="true" href="#" data-role="button"  data-icon="search">Search</a> &nbsp; 
+            <a data-mini="true" class="ui-btn-right"  data-role="button" data-iconpos="notext"  data-icon="refresh"  data-theme="b" ></a>  
+        </div>
 
-              
-                 <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
-                     <a  data-mini="true" data-rel="back" data-role="button" data-icon="back" data-iconpos="notext"  data-theme="b"></a>                       
-                      <a class="ui-btn-right" data-mini="true"  data-role="button" data-iconpos="notext"  data-icon="refresh"  data-theme="b" ></a>                       
-                              
+    </div>
+
+    <div data-role=page id=listassets  data-title="E&P Net1"  data-theme="e" data-bind="with: page2ViewModel" > 
+
+        <div  data-role=header data-position="inline" data-theme="a" data-mini="true" data-fullscreen="true"> 
+	        <h6>E&P Netvinod</h6>
+                  
+	     
+            <a class="ui-btn-left"  data-mini="true" data-rel="back"  data-icon="back" data-theme="e"  data-iconpos="notext">Back </a>
                     
+
+                <a class="ui-btn-right" href="#pagemain" data-mini="true"  data-icon="home" data-theme="e" data-iconpos="notext"> Home</a>
+                          
+                <div data-role="navbar" data-iconpos="right" class="ui-navbar" role="navigation" data-mini="true">
+                    <ul>                        
+                        <li><a  data-role="button" class="ui-btn-active"  data-icon="home" data-theme="a" >Assets</a></li>                        
+                        <li><a  data-role="button" onclick="javascript:goTo('#page1','slide');"  data-ajax="false" data-icon="grid"  data-theme="a" >Rigs</a></li>
+                        <li><a data-role="button" href="#popup1" data-overlay-theme="b" data-rel="dialog" data-transition="slidedown" data-inline="true" data-icon="gear" data-iconpos="notext"  data-theme="a" >Setup</a></li>
+                    </ul>
                 </div>
+                  
+        </div>
                
-               <!-- <div  data-role=footer data-position="fixed" id="ui-footer" class="ui-footer" data-theme="a">
-                     <div data-role="navbar" data-iconpos="right"  role="navigation" data-mini="true">
-                            <ul style="width:60%;margin: auto; text-align: center">                        
-                                <li style="list-style-type: none;" ><a  data-role="button"   data-icon="check" data-theme="a" >Save33</a></li>                        
-                                <li style="list-style-type: none;"><a  data-role="button"  data-icon="delete"  data-theme="a" >Cancel33</a></li>
-                               
-                            </ul>
-                      </div>
-                </div>-->
-
-            </div>
-         <div data-role="page" id="page1" data-theme="e">
-            <div data-role="header" data-theme="b">
-                <h6>xxxx</h6>
-            </div>
-            <div data-role="content" data-theme="b">
-       
-                <div data-role="fieldcontainer">
-                    <label>hello world</label>
-                </div>
-            </div>
-            <div  data-role=footer data-position="fixed"    data-theme="a">
-                     <div data-role="navbar" data-iconpos="right" class="ui-navbar"  role="navigation" data-mini="true">
-                            <ul style="width:60%;margin:auto; text-align: center">                        
-                                <li><a  data-role="button"   data-icon="vinod1" data-theme="a" >Save1</a></li>                        
-                                <li><a  data-role="button"  data-icon="vinod2"  data-theme="a" >Cancel1</a></li>
-                               
-                            </ul>
-                      </div>
-                </div>
+        <div  data-role=content  >
+            <div data-role="collapsible-set"  data-bind="foreach:items" data-theme="a" data-mini="true" data-content-theme="e" >
+            <div data-role="collapsible"  data-collapsed="false">
+                    <h6> <span><span style="color:yellow;" data-bind="text:$data.ProjectName"/>&nbsp;<span>Vinod</span> </span> </h6>
+                    <p><span >Project Name:</span><span style="color:blue;" data-bind="text:$data.ProjectName"/></p> 
+                    <p><span>LGG Code:</span><span style="color:blue;" data-bind="text:$data.LGGCode"/></p> 
+                    <p><span >Created By:</span><span style="color:blue;" data-bind="text:$data.CreatedByUser"/></p> 
+                    <p><span >Created Datre:</span><span style="color:blue;" data-bind="text:$data.CreatedByDate"/></p> 
+                                
+            </div><br />
+        </div> 
+                    
+                     
+        </div>
+                
+        <div  data-role=footer data-position="fixed" id="Div2" class="ui-footer" data-theme="a">
+            <a  data-mini="true" data-rel="back" data-role="button" data-icon="back" data-iconpos="notext"  data-theme="b"></a> &nbsp;
+            <a data-mini="true" href="#" data-role="button" data-icon="grid">List</a>
+	        <a data-mini="true" href="#" data-role="button" data-icon="map">Map</a>
+	        <a data-mini="true"  onclick="javascript:goTo('#searchassets','slide');"  data-ajax="false" data-role="button" data-icon="search">Search</a> &nbsp; 
+            <a data-mini="true" class="ui-btn-right"  data-role="button" data-iconpos="notext"  data-icon="refresh"  data-theme="b" ></a>  
         </div>
 
-        <div data-role="dialog" id="popup1" data-overlay-theme="e">
-            <div data-role="header" data-theme="b">
-                <h6>My dialog heading</h6>
-            </div>
-            <div data-role="content" data-theme="e">
-       
-                <div data-role="fieldcontainer">
-                    <label>hello world</label>
-                </div>
-            </div>
-             <div  data-role=footer data-position="fixed" data-theme="b">
-                <label>My foooter</label>
-                 <a class="ui-btn-center" data-role="button"  data-rel="back" data-corners="true" data-mini="true" data-inline="true" data-icon="back" data-theme="e"  data-iconpos="left">Back </a>
-            </div> 
+    </div>
+
+    <div data-role="page" id="page1" data-theme="e">
+        <div data-role="header" data-theme="b">
+        <h6>vinodtest33</h6>
         </div>
+
+        <div data-role="content" data-theme="b">   
+            <div data-role="fieldcontainer">
+                <label>hello world</label>
+            </div>
+        </div>
+        <div  data-role=footer data-position="fixed"    data-theme="a">
+            <div data-role="navbar" data-iconpos="right" class="ui-navbar"  role="navigation" data-mini="true">
+                <ul style="width:60%;margin:auto; text-align: center">                        
+                    <li><a  data-role="button"   data-icon="vinod1" data-theme="a" >Save1</a></li>                        
+                    <li><a  data-role="button"  data-icon="vinod2"  data-theme="a" >Cancel1</a></li>
+                               
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="dialog" id="popup1" data-overlay-theme="e">
+        <div data-role="header" data-theme="b">
+            <h6>My dialog heading</h6>
+        </div>
+        <div data-role="content" data-theme="e">
        
+            <div data-role="fieldcontainer">
+                <label>hello world</label>
+            </div>
+        </div>
+            <div  data-role=footer data-position="fixed" data-theme="b">
+            <label>My foooter</label>
+                <a class="ui-btn-center" data-role="button"  data-rel="back" data-corners="true" data-mini="true" data-inline="true" data-icon="back" data-theme="e"  data-iconpos="left">Back </a>
+        </div> 
+    </div>
+       
+        <script src="./js/Scripts/json2.js"></script>      
+            <script src="./js/Scripts/jquery-1.9.1.js"></script>           
+            <script src="./js/Scripts/jquery.mobile-1.3.0.min.js"></script>
+       
+            <script src="./js/Scripts/knockout-2.2.1.js"></script>   
+            <script src="./js/Scripts/knockout.validation.js"></script>  
+            <script src="./js/Scripts/knockout.mapping-latest.js"></script>  
+            <script src="./js/Scripts/ko.editables.js"></script>    
          
-         
-            <script src="./js/app/app.common.js"></script>   
-            <script src="./js/app/app.common.viewmodel.js"></script>  
-            <script src="./js/app/app.manageproject.viewmodel.js"></script>  
+    <script src="./js/app/app.common.js"></script>   
+    <script src="./js/app/newapp.common.viewmodel.js"></script>  
    
+    <script src="./js/app/newapp.manageproject.viewmodel.js"></script>  
             
-
+         
             <script>
+             
                 function goTo(pageURL, transitionType) {
+                   
                     $.mobile.changePage(pageURL, transitionType);
                 }
+               
             </script>
       
 
